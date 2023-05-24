@@ -1,25 +1,26 @@
 const env = useRuntimeConfig();
 
 export interface PromptResponse {
-    dalle_prompt: string
-    request_body: RequestBody
+    dalle_prompt: string;
+    request_body: RequestBody;
 }
 
 export interface RequestBody {
-    recipient: string
-    metadata: Metadata
+    recipient: string;
+    metadata: Metadata;
+    passThroughArgs: any;
 }
 
 export interface Metadata {
-    name: string
-    image: string
-    description: string
-    attributes: Attribute[]
+    name: string;
+    image: string;
+    description: string;
+    attributes: Attribute[];
 }
 
 export interface Attribute {
-    trait_type: string
-    value: string
+    trait_type: string;
+    value: string;
 }
 
 
