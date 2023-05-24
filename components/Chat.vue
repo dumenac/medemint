@@ -1,5 +1,5 @@
 <template>
-  <div class="min-w-[80vw] xl:min-w-[40vw]">
+  <div class="min-w-[80vw] xl:min-w-[40vw] text-white">
     <form
       class="w-full space-y-4 flex flex-col"
       @submit.prevent="mint"
@@ -9,7 +9,7 @@
       <textarea
         v-model="prompt"
         placeholder="Please mint an NFT on the Polygon blockchain of a Monkey with blue eyes wearing a hawaiian shirt and send it to domenec@crossmint.io"
-        class="p-2 min-h-[150px] rounded-lg border border-gray-200 w-full"
+        class="p-4 min-h-[150px] rounded-lg bg-white/20 w-full focus:outline-none text-white"
       />
       <button
         v-if="!loading"
@@ -22,7 +22,7 @@
       <p v-else class="py-2 px-5 ml-auto">Loading...</p>
     </form>
     <div class="space-y-4" v-else>
-      <div class="md:flex">
+      <div class="md:flex space-x-8">
         <img
           :src="data.data.request.metadata.image"
           alt=""
@@ -61,7 +61,9 @@
           </p>
         </div>
       </div>
-      <button class="py-2 px-4 border rounded bg-green-500 text-white" @click="refresh">Mint another NFT</button>
+      <div class="flex justify-end">
+      <button class="py-2 px-4 rounded bg-green-700 text-white" @click="refresh">Mint another NFT</button>
+      </div>
     </div>
   </div>
 </template>
